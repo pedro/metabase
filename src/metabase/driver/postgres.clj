@@ -204,7 +204,7 @@
           :connection-details->spec  (u/drop-first-arg connection-details->spec)
           :date                      (u/drop-first-arg date)
           :prepare-value             (u/drop-first-arg prepare-value)
-          :set-timezone-sql          (constantly "UPDATE pg_settings SET setting = ? WHERE name ILIKE 'timezone';")
+          :set-timezone-sql          (constantly "set local timezone to ?;")
           :string-length-fn          (constantly :CHAR_LENGTH)
           :unix-timestamp->timestamp (u/drop-first-arg unix-timestamp->timestamp)}))
 
